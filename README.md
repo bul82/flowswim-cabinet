@@ -24,9 +24,9 @@ Telegram Mini App должен открываться по HTTPS. Локальн
 
 - Бот: `@FlowSwimbul82_bot`
 - Кнопка меню: `Кабинет`
-- Временная Mini App ссылка: `https://litter.catbox.moe/gi1wsg.html`
+- Постоянная Mini App ссылка: `https://bul82.github.io/flowswim-cabinet/`
 
-Эта ссылка размещена как временный статический HTML. Для постоянного запуска нужен деплой на домен или VPS.
+Сайт опубликован через GitHub Pages из репозитория `bul82/flowswim-cabinet`.
 
 ## Локальный запуск
 
