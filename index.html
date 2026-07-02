@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7fbfd" />
+    <title>FlowSwim Кабинет</title>
+    <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">FlowSwim</p>
+          <h1>Кабинет спортсмена</h1>
+        </div>
+        <button class="icon-button" type="button" aria-label="Открыть уведомления">
+          <span aria-hidden="true">●</span>
+        </button>
+      </header>
+
+      <section class="athlete-hero" aria-label="Профиль спортсмена">
+        <div class="athlete-photo" aria-hidden="true">
+          <span>МС</span>
+        </div>
+        <div class="athlete-main">
+          <div class="status-row">
+            <span class="status-pill">Группа 7-9 лет</span>
+            <span class="status-pill muted">Абонемент активен</span>
+          </div>
+          <h2>Маша Смирнова</h2>
+          <p>8 лет · начальный плюс · тренер Анна Лебедева</p>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Разделы кабинета">
+        <button class="tab is-active" type="button" data-tab="overview">Главное</button>
+        <button class="tab" type="button" data-tab="parents">Родители</button>
+        <button class="tab" type="button" data-tab="progress">Прогресс</button>
+        <button class="tab" type="button" data-tab="docs">Документы</button>
+      </nav>
+
+      <section class="tab-panel is-active" id="overview">
+        <div class="section-head">
+          <h3>Ближайшее</h3>
+          <button class="text-button" type="button">Все занятия</button>
+        </div>
+
+        <article class="training-card">
+          <div>
+            <p class="card-kicker">Сегодня</p>
+            <h4>Техника кроля</h4>
+            <p>18:30 · дорожка 3 · бассейн «Олимп»</p>
+          </div>
+          <button class="primary-button" type="button">Я приду</button>
+        </article>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <p>Посещаемость</p>
+            <strong>11 из 12</strong>
+          </article>
+          <article class="metric-card">
+            <p>Навык недели</p>
+            <strong>Выдох в воду</strong>
+          </article>
+          <article class="metric-card">
+            <p>Оплата</p>
+            <strong>до 18 июля</strong>
+          </article>
+        </div>
+
+        <article class="note-card">
+          <p class="card-kicker">Комментарий тренера</p>
+          <p>Маша увереннее держит корпус на воде. На следующей тренировке закрепим поворот головы при вдохе.</p>
+        </article>
+      </section>
+
+      <section class="tab-panel" id="parents">
+        <div class="section-head">
+          <h3>Родители</h3>
+          <button class="text-button" type="button" id="saveParents">Сохранить</button>
+        </div>
+
+        <form class="parent-list">
+          <article class="parent-card">
+            <div class="parent-photo mother" aria-hidden="true">ЕС</div>
+            <div class="parent-fields">
+              <label>
+                Мама
+                <input name="motherName" value="Елена Смирнова" autocomplete="name" />
+              </label>
+              <label>
+                Телефон
+                <input name="motherPhone" value="+7 999 123-45-67" inputmode="tel" autocomplete="tel" />
+              </label>
+              <label>
+                Telegram
+                <input name="motherTelegram" value="@elena_swim" autocomplete="off" />
+              </label>
+            </div>
+          </article>
+
+          <article class="parent-card">
+            <div class="parent-photo father" aria-hidden="true">АС</div>
+            <div class="parent-fields">
+              <label>
+                Папа
+                <input name="fatherName" value="Андрей Смирнов" autocomplete="name" />
+              </label>
+              <label>
+                Телефон
+                <input name="fatherPhone" value="+7 999 765-43-21" inputmode="tel" autocomplete="tel" />
+              </label>
+              <label>
+                Telegram
+                <input name="fatherTelegram" value="@andrey_sm" autocomplete="off" />
+              </label>
+            </div>
+          </article>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="progress">
+        <div class="section-head">
+          <h3>Прогресс</h3>
+          <button class="text-button" type="button">Отчет</button>
+        </div>
+
+        <div class="skill-list">
+          <article class="skill-card">
+            <div>
+              <h4>Кроль на груди</h4>
+              <p>Дыхание через 3 гребка</p>
+            </div>
+            <meter min="0" max="100" value="72">72%</meter>
+          </article>
+          <article class="skill-card">
+            <div>
+              <h4>Спина</h4>
+              <p>Ровное положение корпуса</p>
+            </div>
+            <meter min="0" max="100" value="58">58%</meter>
+          </article>
+          <article class="skill-card">
+            <div>
+              <h4>Старт</h4>
+              <p>Прыжок с бортика</p>
+            </div>
+            <meter min="0" max="100" value="40">40%</meter>
+          </article>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="docs">
+        <div class="section-head">
+          <h3>Документы</h3>
+          <button class="text-button" type="button">Загрузить</button>
+        </div>
+
+        <div class="doc-list">
+          <article class="doc-row">
+            <div>
+              <h4>Медицинская справка</h4>
+              <p>Действует до 2 сентября</p>
+            </div>
+            <span class="doc-status ok">Есть</span>
+          </article>
+          <article class="doc-row">
+            <div>
+              <h4>Согласие родителя</h4>
+              <p>Подписано мамой</p>
+            </div>
+            <span class="doc-status ok">Есть</span>
+          </article>
+          <article class="doc-row">
+            <div>
+              <h4>Фото родителя для пропуска</h4>
+              <p>Нужно обновить</p>
+            </div>
+            <span class="doc-status warn">Нужно</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
