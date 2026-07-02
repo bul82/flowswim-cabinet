@@ -33,16 +33,16 @@
 
       <section class="role-view is-active" id="student-view" data-role-view="student">
         <section class="athlete-hero" aria-label="Профиль спортсмена">
-          <div class="athlete-photo" aria-hidden="true">
-            <span>МС</span>
+          <div class="athlete-photo">
+            <img src="assets/sevastyan-volodin.jpg" alt="Володин Севастьян Денисович" />
           </div>
           <div class="athlete-main">
             <div class="status-row">
-              <span class="status-pill">Группа 7-9 лет</span>
-              <span class="status-pill muted">Абонемент активен</span>
+              <span class="status-pill">Детская группа</span>
+              <span class="status-pill muted">Родитель подключен</span>
             </div>
-            <h2>Маша Смирнова</h2>
-            <p>8 лет · начальный плюс · тренер Анна Лебедева</p>
+            <h2>Володин Севастьян Денисович</h2>
+            <p>Начальный уровень · тренер Анна Лебедева</p>
           </div>
         </section>
 
@@ -62,8 +62,8 @@
           <article class="training-card">
             <div>
               <p class="card-kicker">Сегодня</p>
-              <h4>Техника кроля</h4>
-              <p>18:30 · дорожка 3 · бассейн «Олимп»</p>
+              <h4>Адаптация к воде</h4>
+              <p>18:30 · малая чаша · бассейн «Олимп»</p>
             </div>
             <button class="primary-button" type="button" id="confirmVisit">Я приду</button>
           </article>
@@ -71,11 +71,11 @@
           <div class="metric-grid">
             <article class="metric-card">
               <p>Посещаемость</p>
-              <strong>11 из 12</strong>
+              <strong>1 из 1</strong>
             </article>
             <article class="metric-card">
               <p>Навык недели</p>
-              <strong>Выдох в воду</strong>
+              <strong>Привыкание к воде</strong>
             </article>
             <article class="metric-card">
               <p>Оплата</p>
@@ -85,7 +85,7 @@
 
           <article class="note-card">
             <p class="card-kicker">Комментарий тренера</p>
-            <p>Маша увереннее держит корпус на воде. На следующей тренировке закрепим поворот головы при вдохе.</p>
+            <p>Севастьян знакомится с водой и тренером. На следующем занятии мягко закрепим погружение лица и выдох.</p>
           </article>
         </section>
 
@@ -101,15 +101,15 @@
               <div class="parent-fields">
                 <label>
                   Мама
-                  <input name="motherName" value="Елена Смирнова" autocomplete="name" />
+                  <input name="motherName" value="Не подключена" autocomplete="name" />
                 </label>
                 <label>
                   Телефон
-                  <input name="motherPhone" value="+7 999 123-45-67" inputmode="tel" autocomplete="tel" />
+                  <input name="motherPhone" value="Телефон добавит родитель" inputmode="tel" autocomplete="tel" />
                 </label>
                 <label>
                   Telegram
-                  <input name="motherTelegram" value="@elena_swim" autocomplete="off" />
+                  <input name="motherTelegram" value="Не указан" autocomplete="off" />
                 </label>
               </div>
             </article>
@@ -119,15 +119,15 @@
               <div class="parent-fields">
                 <label>
                   Папа
-                  <input name="fatherName" value="Андрей Смирнов" autocomplete="name" />
+                  <input name="fatherName" value="Денис Володин" autocomplete="name" />
                 </label>
                 <label>
                   Телефон
-                  <input name="fatherPhone" value="+7 999 765-43-21" inputmode="tel" autocomplete="tel" />
+                  <input name="fatherPhone" value="Телефон ожидает подтверждения" inputmode="tel" autocomplete="tel" />
                 </label>
                 <label>
                   Telegram
-                  <input name="fatherTelegram" value="@andrey_sm" autocomplete="off" />
+                  <input name="fatherTelegram" value="@DenVolodins" autocomplete="off" />
                 </label>
               </div>
             </article>
@@ -143,24 +143,24 @@
           <div class="skill-list">
             <article class="skill-card">
               <div>
-                <h4>Кроль на груди</h4>
-                <p>Дыхание через 3 гребка</p>
+                <h4>Адаптация к воде</h4>
+                <p>Спокойно заходит в воду с тренером</p>
               </div>
-              <meter min="0" max="100" value="72">72%</meter>
+              <meter min="0" max="100" value="35">35%</meter>
             </article>
             <article class="skill-card">
               <div>
-                <h4>Спина</h4>
-                <p>Ровное положение корпуса</p>
+                <h4>Выдох в воду</h4>
+                <p>Начинаем через игру и короткие подходы</p>
               </div>
-              <meter min="0" max="100" value="58">58%</meter>
+              <meter min="0" max="100" value="20">20%</meter>
             </article>
             <article class="skill-card">
               <div>
-                <h4>Старт</h4>
-                <p>Прыжок с бортика</p>
+                <h4>Скольжение</h4>
+                <p>Пока с поддержкой тренера</p>
               </div>
-              <meter min="0" max="100" value="40">40%</meter>
+              <meter min="0" max="100" value="15">15%</meter>
             </article>
           </div>
         </section>
@@ -174,17 +174,17 @@
           <div class="doc-list">
             <article class="doc-row">
               <div>
-                <h4>Медицинская справка</h4>
-                <p>Действует до 2 сентября</p>
-              </div>
-              <span class="doc-status ok">Есть</span>
+              <h4>Медицинская справка</h4>
+              <p>Нужно загрузить перед первым циклом занятий</p>
+            </div>
+              <span class="doc-status warn">Нужно</span>
             </article>
             <article class="doc-row">
               <div>
                 <h4>Согласие родителя</h4>
-                <p>Подписано мамой</p>
-              </div>
-              <span class="doc-status ok">Есть</span>
+              <p>Ожидает подтверждения родителя</p>
+            </div>
+            <span class="doc-status warn">Нужно</span>
             </article>
             <article class="doc-row">
               <div>
@@ -202,7 +202,7 @@
           <div>
             <p class="eyebrow">Тренер</p>
             <h2>Анна Лебедева</h2>
-            <p>2 группы · 3 ученика · сегодня 2 тренировки</p>
+            <p>1 группа · 1 ученик · сегодня 1 тренировка</p>
           </div>
           <button class="primary-button" type="button">Отметить группу</button>
         </section>
@@ -224,16 +224,8 @@
             <article class="coach-session">
               <div>
                 <p class="card-kicker">18:30 · дорожка 3</p>
-                <h4>Группа 7-9 лет</h4>
-                <p>2 ученика · техника кроля</p>
-              </div>
-              <button class="small-button" type="button">Посещаемость</button>
-            </article>
-            <article class="coach-session">
-              <div>
-                <p class="card-kicker">19:30 · дорожка 2</p>
-                <h4>Продвинутые</h4>
-                <p>1 ученик · старт и поворот</p>
+                <h4>Детская группа</h4>
+                <p>1 ученик · адаптация к воде</p>
               </div>
               <button class="small-button" type="button">Посещаемость</button>
             </article>
@@ -248,22 +240,22 @@
 
           <div class="metric-grid">
             <article class="metric-card">
-              <p>7-9 лет</p>
-              <strong>2 ребенка</strong>
-            </article>
-            <article class="metric-card">
-              <p>Продвинутые</p>
+              <p>Детская группа</p>
               <strong>1 ребенок</strong>
             </article>
             <article class="metric-card">
+              <p>Родители</p>
+              <strong>1 подключен</strong>
+            </article>
+            <article class="metric-card">
               <p>Сегодня</p>
-              <strong>3 отметки</strong>
+              <strong>1 отметка</strong>
             </article>
           </div>
 
           <article class="note-card">
             <p class="card-kicker">Фокус недели</p>
-            <p>Группа 7-9 лет работает над кролем, продвинутые готовят контрольный старт и поворот.</p>
+            <p>Севастьян начинает с мягкой адаптации к воде: доверие к тренеру, погружение лица, выдох и первые скольжения.</p>
           </article>
         </section>
 
@@ -275,28 +267,14 @@
 
           <div class="student-list">
             <article class="student-row">
-              <div class="student-avatar">МС</div>
+              <div class="student-avatar image-avatar">
+                <img src="assets/sevastyan-volodin.jpg" alt="" />
+              </div>
               <div>
-                <h4>Маша Смирнова</h4>
-                <p>7-9 лет · Елена +7 999 123-45-67</p>
+                <h4>Володин Севастьян Денисович</h4>
+                <p>Детская группа · Денис Володин · @DenVolodins</p>
               </div>
               <span class="doc-status ok">Родитель</span>
-            </article>
-            <article class="student-row">
-              <div class="student-avatar blue">ИП</div>
-              <div>
-                <h4>Илья Петров</h4>
-                <p>7-9 лет · Ольга +7 999 222-10-11</p>
-              </div>
-              <span class="doc-status warn">Ждет код</span>
-            </article>
-            <article class="student-row">
-              <div class="student-avatar coral">АК</div>
-              <div>
-                <h4>Аня Кузнецова</h4>
-                <p>Продвинутые · Мария +7 999 333-20-21</p>
-              </div>
-              <span class="doc-status ok">Ребенок</span>
             </article>
           </div>
         </section>
@@ -310,24 +288,10 @@
           <div class="skill-list">
             <article class="skill-card">
               <div>
-                <h4>Маша Смирнова</h4>
-                <p>Кроль · дыхание через 3 гребка</p>
+                <h4>Володин Севастьян</h4>
+                <p>Адаптация · спокойно заходит в воду</p>
               </div>
-              <meter min="0" max="100" value="72">72%</meter>
-            </article>
-            <article class="skill-card">
-              <div>
-                <h4>Илья Петров</h4>
-                <p>Скольжение · держит корпус ровнее</p>
-              </div>
-              <meter min="0" max="100" value="64">64%</meter>
-            </article>
-            <article class="skill-card">
-              <div>
-                <h4>Аня Кузнецова</h4>
-                <p>Выдох в воду · нужна уверенность</p>
-              </div>
-              <meter min="0" max="100" value="48">48%</meter>
+              <meter min="0" max="100" value="35">35%</meter>
             </article>
           </div>
         </section>

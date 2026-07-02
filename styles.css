@@ -195,6 +195,15 @@ p {
   color: #fff;
   font-size: 30px;
   font-weight: 800;
+  overflow: hidden;
+}
+
+.athlete-photo img,
+.student-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
 }
 
 .status-row {
@@ -396,6 +405,11 @@ p {
 
 .student-avatar.coral {
   background: linear-gradient(135deg, #a95763, #713d4a);
+}
+
+.student-avatar.image-avatar {
+  overflow: hidden;
+  background: var(--surface-muted);
 }
 
 .parent-card {

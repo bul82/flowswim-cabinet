@@ -7,7 +7,7 @@ const parentForm = document.querySelector(".parent-list");
 const saveParentsButton = document.querySelector("#saveParents");
 const confirmVisitButton = document.querySelector("#confirmVisit");
 
-const parentStorageKey = "flowswim-parent-profile";
+const parentStorageKey = "flowswim-parent-profile-sevastyan-volodin";
 const roleStorageKey = "flowswim-active-role";
 
 function applyTelegramTheme() {
