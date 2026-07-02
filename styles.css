@@ -111,16 +111,68 @@ p {
 }
 
 .athlete-hero,
+.coach-hero,
 .training-card,
 .note-card,
 .metric-card,
 .parent-card,
 .skill-card,
-.doc-row {
+.doc-row,
+.coach-session,
+.student-row {
   border: 1px solid rgba(216, 227, 232, 0.88);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
+}
+
+.role-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.role-button {
+  display: grid;
+  min-height: 58px;
+  gap: 3px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  padding: 9px 12px;
+}
+
+.role-button span {
+  color: inherit;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.role-button small {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.role-button.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 6px 18px rgba(25, 58, 70, 0.1);
+}
+
+.role-view {
+  display: none;
+}
+
+.role-view.is-active {
+  display: block;
 }
 
 .athlete-hero {
@@ -276,9 +328,74 @@ p {
 
 .parent-list,
 .skill-list,
-.doc-list {
+.doc-list,
+.coach-list,
+.student-list {
   display: grid;
   gap: 12px;
+}
+
+.coach-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+}
+
+.coach-hero h2 {
+  margin-bottom: 8px;
+}
+
+.coach-hero p:last-child {
+  margin-bottom: 0;
+}
+
+.coach-session,
+.student-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+}
+
+.coach-session p,
+.student-row p {
+  margin-bottom: 0;
+}
+
+.small-button {
+  min-height: 38px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.student-avatar {
+  display: grid;
+  width: 46px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(14, 124, 134, 0.92), rgba(19, 43, 55, 0.95));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.student-avatar.blue {
+  background: linear-gradient(135deg, #496f82, #273f53);
+}
+
+.student-avatar.coral {
+  background: linear-gradient(135deg, #a95763, #713d4a);
 }
 
 .parent-card {
@@ -444,9 +561,16 @@ meter::-webkit-meter-optimum-value {
   }
 
   .training-card,
-  .doc-row {
+  .doc-row,
+  .coach-hero,
+  .coach-session,
+  .student-row {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .student-row {
+    align-items: flex-start;
   }
 
   .skill-card {

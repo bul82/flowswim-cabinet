@@ -1,11 +1,14 @@
 const tg = window.Telegram?.WebApp;
+const roleButtons = document.querySelectorAll(".role-button");
+const roleViews = document.querySelectorAll(".role-view");
 const tabs = document.querySelectorAll(".tab");
-const panels = document.querySelectorAll(".tab-panel");
 const toast = document.querySelector(".toast");
 const parentForm = document.querySelector(".parent-list");
 const saveParentsButton = document.querySelector("#saveParents");
+const confirmVisitButton = document.querySelector("#confirmVisit");
 
-const storageKey = "flowswim-parent-profile";
+const parentStorageKey = "flowswim-parent-profile";
+const roleStorageKey = "flowswim-active-role";
 
 function applyTelegramTheme() {
   if (!tg) return;
@@ -20,22 +23,51 @@ function applyTelegramTheme() {
   if (params.button_color) document.documentElement.style.setProperty("--accent", params.button_color);
   if (params.secondary_bg_color) document.documentElement.style.setProperty("--surface-muted", params.secondary_bg_color);
 
-  tg.MainButton.setText("Записаться к тренеру");
-  tg.MainButton.onClick(() => showToast("Заявка тренеру подготовлена"));
+  tg.MainButton.onClick(() => showToast("Действие подготовлено"));
+}
+
+function setMainButton(role, tabId) {
+  if (!tg) return;
+
+  if (role === "student" && tabId === "student-overview") {
+    tg.MainButton.setText("Написать тренеру");
+    tg.MainButton.show();
+    return;
+  }
+
+  if (role === "coach" && tabId === "coach-today") {
+    tg.MainButton.setText("Отметить посещаемость");
+    tg.MainButton.show();
+    return;
+  }
+
+  tg.MainButton.hide();
+}
+
+function switchRole(role) {
+  roleButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.role === role));
+  roleViews.forEach((view) => view.classList.toggle("is-active", view.dataset.roleView === role));
+  localStorage.setItem(roleStorageKey, role);
+
+  const activeTab = document.querySelector(`[data-role-view="${role}"] .tab.is-active`);
+  setMainButton(role, activeTab?.dataset.tab);
+  tg?.HapticFeedback?.selectionChanged();
 }
 
 function switchTab(tabId) {
-  tabs.forEach((tab) => tab.classList.toggle("is-active", tab.dataset.tab === tabId));
-  panels.forEach((panel) => panel.classList.toggle("is-active", panel.id === tabId));
+  const tab = document.querySelector(`[data-tab="${tabId}"]`);
+  if (!tab) return;
 
-  if (tg) {
-    if (tabId === "overview") {
-      tg.MainButton.show();
-    } else {
-      tg.MainButton.hide();
-    }
-    tg.HapticFeedback?.selectionChanged();
-  }
+  const group = tab.closest("[data-tabs]")?.dataset.tabs;
+  document.querySelectorAll(`[data-tabs="${group}"] .tab`).forEach((item) => {
+    item.classList.toggle("is-active", item.dataset.tab === tabId);
+  });
+  document.querySelectorAll(`[data-panel-group="${group}"]`).forEach((panel) => {
+    panel.classList.toggle("is-active", panel.id === tabId);
+  });
+
+  setMainButton(group, tabId);
+  tg?.HapticFeedback?.selectionChanged();
 }
 
 function showToast(message) {
@@ -48,13 +80,13 @@ function showToast(message) {
 function saveParents() {
   const formData = new FormData(parentForm);
   const values = Object.fromEntries(formData.entries());
-  localStorage.setItem(storageKey, JSON.stringify(values));
+  localStorage.setItem(parentStorageKey, JSON.stringify(values));
   showToast("Контакты родителей сохранены");
   tg?.HapticFeedback?.notificationOccurred("success");
 }
 
 function restoreParents() {
-  const saved = localStorage.getItem(storageKey);
+  const saved = localStorage.getItem(parentStorageKey);
   if (!saved) return;
 
   const values = JSON.parse(saved);
@@ -64,17 +96,25 @@ function restoreParents() {
   });
 }
 
+roleButtons.forEach((button) => {
+  button.addEventListener("click", () => switchRole(button.dataset.role));
+});
+
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => switchTab(tab.dataset.tab));
 });
 
 saveParentsButton.addEventListener("click", saveParents);
 
-document.querySelector(".primary-button").addEventListener("click", () => {
+confirmVisitButton.addEventListener("click", () => {
   showToast("Тренер увидит отметку о посещении");
   tg?.HapticFeedback?.impactOccurred("light");
 });
 
+document.querySelectorAll(".coach-session .small-button").forEach((button) => {
+  button.addEventListener("click", () => showToast("Открыта отметка группы"));
+});
+
 restoreParents();
 applyTelegramTheme();
-switchTab("overview");
+switchRole(localStorage.getItem(roleStorageKey) || "student");
