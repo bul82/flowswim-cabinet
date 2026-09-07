@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlowSwim CJM</title>
+    <link rel="stylesheet" href="cjm.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="brand">FlowSwim</p>
+        <h1>CJM и роли личного кабинета в Telegram</h1>
+        <p class="lead">Один бот и Mini App. Пользователь входит через Telegram ID, а система открывает нужный экран: админ, тренер, родитель или ребенок.</p>
+      </header>
+
+      <section class="auth-map" aria-label="Авторизация">
+        <div class="auth-node source">
+          <span>01</span>
+          <h2>Вход в бота</h2>
+          <p>Пользователь нажимает «Открыть кабинет» в Telegram.</p>
+        </div>
+        <div class="connector"></div>
+        <div class="auth-node check">
+          <span>02</span>
+          <h2>Проверка Telegram ID</h2>
+          <p>Система ищет ID в списке сотрудников, родителей и детей.</p>
+        </div>
+        <div class="connector"></div>
+        <div class="auth-node result">
+          <span>03</span>
+          <h2>Роль и доступ</h2>
+          <p>Открывается только тот кабинет, на который есть права.</p>
+        </div>
+      </section>
+
+      <section class="role-grid" aria-label="Центральные экраны">
+        <article class="role-card admin">
+          <div class="role-head">
+            <span>Главный тренер / зам</span>
+            <strong>Админ школы</strong>
+          </div>
+          <div class="screen">
+            <div class="screen-top">Центр управления</div>
+            <div class="screen-row">Тренеры <b>4</b></div>
+            <div class="screen-row">Группы <b>12</b></div>
+            <div class="screen-row">Ученики <b>148</b></div>
+            <div class="screen-row accent">Расписание недели</div>
+          </div>
+          <ul>
+            <li>Видит всех тренеров, группы и учеников.</li>
+            <li>Назначает тренеров и замов.</li>
+            <li>Создает расписание, переносы, замены.</li>
+            <li>Контролирует оплаты, документы и доступы.</li>
+          </ul>
+        </article>
+
+        <article class="role-card coach">
+          <div class="role-head">
+            <span>Обычный тренер</span>
+            <strong>Работа с группами</strong>
+          </div>
+          <div class="screen">
+            <div class="screen-top">Сегодня</div>
+            <div class="screen-row">18:30 · детская группа</div>
+            <div class="screen-row">Ученики <b>8</b></div>
+            <div class="screen-row">Отметить посещаемость</div>
+            <div class="screen-row accent">Обновить прогресс</div>
+          </div>
+          <ul>
+            <li>Видит только свои группы и учеников.</li>
+            <li>Создает карточку ученика, если это разрешено.</li>
+            <li>Отмечает посещаемость и прогресс.</li>
+            <li>Отправляет родителю код подключения.</li>
+          </ul>
+        </article>
+
+        <article class="role-card parent">
+          <div class="role-head">
+            <span>Родитель</span>
+            <strong>Кабинет ребенка</strong>
+          </div>
+          <div class="screen">
+            <div class="screen-top">Сева Володин</div>
+            <div class="screen-row">Следующая тренировка</div>
+            <div class="screen-row">Прогресс и комментарии</div>
+            <div class="screen-row">Оплата и документы</div>
+            <div class="screen-row accent">Предзапись</div>
+          </div>
+          <ul>
+            <li>Видит только своего ребенка или своих детей.</li>
+            <li>Подтверждает посещение.</li>
+            <li>Загружает справки и согласия.</li>
+            <li>Записывает ребенка на пробное или допзанятие.</li>
+          </ul>
+        </article>
+
+        <article class="role-card child">
+          <div class="role-head">
+            <span>Ребенок</span>
+            <strong>Ограниченный доступ</strong>
+          </div>
+          <div class="screen">
+            <div class="screen-top">Мой прогресс</div>
+            <div class="screen-row">Расписание</div>
+            <div class="screen-row">Навык недели</div>
+            <div class="screen-row">Достижения</div>
+            <div class="screen-row accent">Что потренировать</div>
+          </div>
+          <ul>
+            <li>Подключается со своего телефона по отдельному коду.</li>
+            <li>Видит расписание, прогресс и достижения.</li>
+            <li>Не видит оплаты, документы и телефоны родителей.</li>
+            <li>Получает понятные задания от тренера.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="journey" aria-label="CJM">
+        <div class="section-title">
+          <p class="brand">CJM</p>
+          <h2>Путь пользователя</h2>
+        </div>
+
+        <div class="lane admin-lane">
+          <h3>Админ</h3>
+          <div class="step">Входит по Telegram ID</div>
+          <div class="step">Создает тренеров и группы</div>
+          <div class="step">Назначает тренера или зама</div>
+          <div class="step">Собирает расписание</div>
+          <div class="step">Видит оплату, документы, загрузку групп</div>
+        </div>
+
+        <div class="lane coach-lane">
+          <h3>Тренер</h3>
+          <div class="step">Видит занятия на сегодня</div>
+          <div class="step">Создает Севу Володина</div>
+          <div class="step">Добавляет Дениса Володина</div>
+          <div class="step">Отправляет код и ссылку на бота</div>
+          <div class="step">Ведет посещаемость и прогресс</div>
+        </div>
+
+        <div class="lane parent-lane">
+          <h3>Родитель</h3>
+          <div class="step">Открывает бота по ссылке</div>
+          <div class="step">Вводит код приглашения</div>
+          <div class="step">Подтверждает телефон</div>
+          <div class="step">Видит только Севу</div>
+          <div class="step">Оплата, справки, расписание, предзапись</div>
+        </div>
+
+        <div class="lane child-lane">
+          <h3>Ребенок</h3>
+          <div class="step">Получает отдельный детский код</div>
+          <div class="step">Входит со своего телефона</div>
+          <div class="step">Видит расписание</div>
+          <div class="step">Смотрит прогресс и задания</div>
+          <div class="step">Получает достижения без финансовых данных</div>
+        </div>
+      </section>
+
+      <section class="features" aria-label="Фишки">
+        <div class="section-title">
+          <p class="brand">Фишки MVP+</p>
+          <h2>Что сразу усилит продукт</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article>
+            <h3>Предзапись</h3>
+            <p>Родитель выбирает пробное или допзанятие, система показывает свободные окна и лист ожидания.</p>
+          </article>
+          <article>
+            <h3>Расписание</h3>
+            <p>Админ создает занятия по группам. Тренер видит только свои занятия, родитель и ребенок — свои.</p>
+          </article>
+          <article>
+            <h3>Умные статусы</h3>
+            <p>«Нет справки», «абонемент скоро закончится», «родитель не подключен», «нужна замена тренера».</p>
+          </article>
+          <article>
+            <h3>Коды доступа</h3>
+            <p>Отдельный код для родителя и отдельный код для ребенка. Коды одноразовые и ограничены по времени.</p>
+          </article>
+          <article>
+            <h3>Зам главного тренера</h3>
+            <p>Админ может дать заместителю доступ к группам, тренерам и расписанию без передачи владельческого аккаунта.</p>
+          </article>
+          <article>
+            <h3>Сообщения в Telegram</h3>
+            <p>Напоминания о тренировках, переносы, просьба загрузить справку, комментарий тренера после занятия.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
