@@ -1,0 +1,367 @@
+:root {
+  --bg: #eef6f8;
+  --paper: #ffffff;
+  --ink: #172126;
+  --muted: #62747d;
+  --line: #d7e4e9;
+  --aqua: #0e7c86;
+  --aqua-soft: #dff4f5;
+  --coral: #d96c5f;
+  --gold: #bd8d35;
+  --violet: #6f6a9a;
+  --green: #5d8c6a;
+  --shadow: 0 24px 70px rgba(24, 59, 70, 0.13);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(14, 124, 134, 0.14), transparent 30rem),
+    radial-gradient(circle at 12% 78%, rgba(217, 108, 95, 0.12), transparent 26rem),
+    var(--bg);
+  color: var(--ink);
+}
+
+.page {
+  width: min(100%, 1240px);
+  margin: 0 auto;
+  padding: 34px 24px 48px;
+}
+
+.hero {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.brand {
+  margin: 0;
+  color: var(--aqua);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+.step,
+.screen-row {
+  margin-top: 0;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  max-width: 880px;
+  margin-bottom: 0;
+  font-size: clamp(34px, 6vw, 72px);
+  line-height: 0.96;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.02;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.lead {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.auth-map,
+.role-card,
+.journey,
+.features {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow);
+}
+
+.auth-map {
+  display: grid;
+  grid-template-columns: 1fr 58px 1fr 58px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.auth-node {
+  min-width: 0;
+  min-height: 150px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #f8fcfd;
+}
+
+.auth-node span,
+.role-head span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--aqua);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.auth-node h2 {
+  font-size: 22px;
+}
+
+.auth-node p,
+.role-card li,
+.features p {
+  color: var(--muted);
+  line-height: 1.42;
+}
+
+.connector {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.role-card {
+  min-width: 0;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  padding: 16px;
+}
+
+.role-head strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.screen {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f6fbfc;
+}
+
+.screen-top,
+.screen-row {
+  min-height: 38px;
+  padding: 10px 11px;
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 760;
+}
+
+.screen-top {
+  background: var(--aqua);
+  color: #fff;
+}
+
+.screen-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.screen-row.accent {
+  background: var(--aqua-soft);
+  color: var(--aqua);
+}
+
+.role-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.admin .role-head span,
+.admin .screen-row.accent {
+  color: var(--violet);
+}
+
+.coach .role-head span {
+  color: var(--aqua);
+}
+
+.parent .role-head span {
+  color: var(--coral);
+}
+
+.child .role-head span {
+  color: var(--green);
+}
+
+.journey,
+.features {
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.section-title {
+  margin-bottom: 14px;
+}
+
+.section-title h2 {
+  margin-bottom: 0;
+}
+
+.lane {
+  display: grid;
+  grid-template-columns: 130px repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.lane h3 {
+  display: grid;
+  margin: 0;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+}
+
+.step {
+  min-width: 0;
+  min-height: 92px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fcfd;
+  color: var(--ink);
+  font-weight: 740;
+  line-height: 1.25;
+}
+
+.admin-lane .step:first-of-type,
+.coach-lane .step:first-of-type,
+.parent-lane .step:first-of-type,
+.child-lane .step:first-of-type {
+  background: var(--aqua-soft);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.feature-grid article {
+  min-width: 0;
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fcfd;
+}
+
+.feature-grid p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 980px) {
+  .auth-map,
+  .role-grid,
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .lane {
+    grid-template-columns: 1fr;
+  }
+
+  .lane h3 {
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page {
+    width: 366px;
+    max-width: calc(100% - 24px);
+    margin: 0 0 0 12px;
+    padding: 18px 0 32px;
+  }
+
+  .hero,
+  .auth-map,
+  .role-grid,
+  .journey,
+  .features {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .auth-map,
+  .role-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-map,
+  .role-card,
+  .journey,
+  .features {
+    overflow: hidden;
+  }
+
+  .screen-row {
+    flex-wrap: wrap;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: 28px;
+  }
+
+  .lead {
+    width: 100%;
+    max-width: 100%;
+  }
+}

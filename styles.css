@@ -1,0 +1,597 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f8fa;
+  --surface: #ffffff;
+  --surface-muted: #e9f1f4;
+  --text: #172126;
+  --muted: #68777f;
+  --line: #d8e3e8;
+  --accent: #0e7c86;
+  --accent-dark: #0b5f66;
+  --accent-soft: #dff4f5;
+  --coral: #d96c5f;
+  --gold: #bd8d35;
+  --shadow: 0 18px 44px rgba(25, 58, 70, 0.1);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgba(14, 124, 134, 0.14), transparent 32rem),
+    linear-gradient(180deg, #f7fbfd 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  width: min(100%, 560px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: max(18px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.eyebrow,
+.card-kicker {
+  margin: 0 0 4px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(27px, 8vw, 38px);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 30px;
+  line-height: 1.02;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+h4 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.icon-button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--coral);
+  box-shadow: var(--shadow);
+}
+
+.athlete-hero,
+.coach-hero,
+.training-card,
+.note-card,
+.metric-card,
+.parent-card,
+.skill-card,
+.doc-row,
+.coach-session,
+.student-row {
+  border: 1px solid rgba(216, 227, 232, 0.88);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.role-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.role-button {
+  display: grid;
+  min-height: 58px;
+  gap: 3px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  padding: 9px 12px;
+}
+
+.role-button span {
+  color: inherit;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.role-button small {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.role-button.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 6px 18px rgba(25, 58, 70, 0.1);
+}
+
+.role-view {
+  display: none;
+}
+
+.role-view.is-active {
+  display: block;
+}
+
+.athlete-hero {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+}
+
+.athlete-photo {
+  display: grid;
+  width: 104px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(14, 124, 134, 0.92), rgba(19, 43, 55, 0.95)),
+    var(--accent);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  overflow: hidden;
+}
+
+.athlete-photo img,
+.student-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.status-pill {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.status-pill.muted {
+  background: #f7ead6;
+  color: #765317;
+}
+
+.athlete-main p {
+  margin-bottom: 0;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 16px 0;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.tab {
+  min-height: 40px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.tab.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 6px 18px rgba(25, 58, 70, 0.1);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 20px 0 12px;
+}
+
+.text-button {
+  min-height: 34px;
+  border: 0;
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 750;
+}
+
+.training-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+}
+
+.training-card p:last-child,
+.note-card p:last-child {
+  margin-bottom: 0;
+}
+
+.primary-button {
+  min-height: 44px;
+  flex: 0 0 auto;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.metric-card {
+  min-height: 112px;
+  padding: 14px;
+}
+
+.metric-card p {
+  min-height: 36px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.metric-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.08;
+}
+
+.note-card {
+  padding: 16px;
+}
+
+.parent-list,
+.skill-list,
+.doc-list,
+.coach-list,
+.student-list {
+  display: grid;
+  gap: 12px;
+}
+
+.coach-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+}
+
+.coach-hero h2 {
+  margin-bottom: 8px;
+}
+
+.coach-hero p:last-child {
+  margin-bottom: 0;
+}
+
+.coach-session,
+.student-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+}
+
+.coach-session p,
+.student-row p {
+  margin-bottom: 0;
+}
+
+.small-button {
+  min-height: 38px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.student-avatar {
+  display: grid;
+  width: 46px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(14, 124, 134, 0.92), rgba(19, 43, 55, 0.95));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.student-avatar.blue {
+  background: linear-gradient(135deg, #496f82, #273f53);
+}
+
+.student-avatar.coral {
+  background: linear-gradient(135deg, #a95763, #713d4a);
+}
+
+.student-avatar.image-avatar {
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+.parent-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.parent-photo {
+  display: grid;
+  width: 72px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 850;
+}
+
+.parent-photo.mother {
+  background: linear-gradient(135deg, #a95763, #713d4a);
+}
+
+.parent-photo.father {
+  background: linear-gradient(135deg, #496f82, #273f53);
+}
+
+.parent-fields {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfe;
+  color: var(--text);
+  padding: 0 12px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 124, 134, 0.14);
+}
+
+.skill-card {
+  display: grid;
+  grid-template-columns: 1fr 118px;
+  gap: 12px;
+  align-items: center;
+  padding: 15px;
+}
+
+.skill-card p {
+  margin-bottom: 0;
+}
+
+meter {
+  width: 100%;
+  height: 12px;
+}
+
+meter::-webkit-meter-bar {
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-muted);
+}
+
+meter::-webkit-meter-optimum-value {
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+}
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+}
+
+.doc-row p {
+  margin-bottom: 0;
+}
+
+.doc-status {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doc-status.ok {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.doc-status.warn {
+  background: #f8e2dc;
+  color: #984337;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 10;
+  width: min(calc(100% - 32px), 420px);
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #172126;
+  color: #fff;
+  font-weight: 750;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, 16px);
+  transition: 0.22s ease;
+  pointer-events: none;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 430px) {
+  .app-shell {
+    padding-inline: 12px;
+  }
+
+  .athlete-hero,
+  .parent-card {
+    grid-template-columns: 1fr;
+  }
+
+  .athlete-photo,
+  .parent-photo {
+    width: 84px;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    min-height: 86px;
+  }
+
+  .metric-card p {
+    min-height: auto;
+  }
+
+  .training-card,
+  .doc-row,
+  .coach-hero,
+  .coach-session,
+  .student-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .student-row {
+    align-items: flex-start;
+  }
+
+  .skill-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlowSwim Demo</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <main class="demo-shell">
+      <header class="demo-header">
+        <div>
+          <p>FlowSwim</p>
+          <h1>Как тренер подключает родителя к ученику</h1>
+        </div>
+        <div class="timer"><span id="sceneNumber">01</span> / 09</div>
+      </header>
+
+      <section class="stage" aria-live="polite">
+        <article class="scene is-active" data-scene="1">
+          <div class="illustration">
+            <div class="phone">
+              <div class="phone-bar">Telegram</div>
+              <div class="bot-card">
+                <div class="bot-avatar">F</div>
+                <h2>FlowSwim</h2>
+                <p>Кабинет школы плавания</p>
+                <button>Открыть кабинет</button>
+              </div>
+            </div>
+            <div class="person coach">
+              <div class="head"></div>
+              <div class="body"></div>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 1</span>
+            <h2>Тренер входит через Telegram</h2>
+            <p>Тренер открывает бота. Система узнает его по Telegram ID и сразу дает доступ к рабочему кабинету.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="2">
+          <div class="illustration">
+            <div class="app-card wide">
+              <div class="tabs-mini">
+                <b>Сегодня</b><b>Группы</b><b>Ученики</b><b>Прогресс</b>
+              </div>
+              <h2>Анна Лебедева</h2>
+              <p>1 группа · 1 ученик · сегодня 1 тренировка</p>
+              <div class="metric-line"></div>
+              <div class="metric-line short"></div>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 2</span>
+            <h2>Открывается профиль тренера</h2>
+            <p>В кабинете тренер видит рабочие разделы: занятия на сегодня, группы, учеников и прогресс.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="3">
+          <div class="illustration">
+            <div class="form-card">
+              <h2>Новый ученик</h2>
+              <label>ФИО <strong>Володин Севастьян Денисович</strong></label>
+              <label>Группа <strong>Детская группа</strong></label>
+              <label>Уровень <strong>Начальный</strong></label>
+              <button>Сохранить карточку</button>
+            </div>
+            <div class="small-photo">
+              <img src="assets/sevastyan-volodin.jpg" alt="" />
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 3</span>
+            <h2>Тренер создает карточку Севы</h2>
+            <p>Карточка ученика появляется в системе еще до подключения родителя. Так школа контролирует, кто реально учится в группе.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="4">
+          <div class="illustration">
+            <div class="form-card parent-form">
+              <h2>Родитель</h2>
+              <label>Имя <strong>Денис Володин</strong></label>
+              <label>Телефон <strong>+7 916 641-93-02</strong></label>
+              <label>Telegram <strong>@DenVolodins</strong></label>
+              <button>Создать приглашение</button>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 4</span>
+            <h2>Добавляется родитель</h2>
+            <p>У ученика появляется контакт родителя. Телефон нужен, чтобы код не стал ключом от чужого кабинета.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="5">
+          <div class="illustration">
+            <div class="app-card wide">
+              <div class="tabs-mini">
+                <b>Инфо</b><b>Прогресс</b><b>Оплата</b><b>Документы</b>
+              </div>
+              <h2>Сева Володин</h2>
+              <div class="status-grid">
+                <span>Оплата: активна</span>
+                <span>Справка: нужна</span>
+                <span>Родитель: ждет код</span>
+              </div>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 5</span>
+            <h2>Тренер видит вкладки ученика</h2>
+            <p>В карточке есть вся база: информация, прогресс, оплата, документы и будущий блок расписания.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="6">
+          <div class="illustration">
+            <div class="invite-card">
+              <p>Код родителя</p>
+              <strong>SEVA-4821</strong>
+              <small>Действует 24 часа · одноразовый</small>
+            </div>
+            <div class="arrow"></div>
+            <div class="phone narrow">
+              <div class="phone-bar">Telegram</div>
+              <div class="message">
+                Вас пригласили в FlowSwim как родителя Севы.
+                <button>Открыть бота</button>
+              </div>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 6</span>
+            <h2>Код и ссылка уходят родителю</h2>
+            <p>Тренер отправляет Денису ссылку на бота и одноразовый код подключения.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="7">
+          <div class="illustration">
+            <div class="confirm-card">
+              <h2>Подключиться?</h2>
+              <p>Вы подключаетесь как родитель ученика:</p>
+              <strong>Володин Севастьян Денисович</strong>
+              <button>Подтвердить</button>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 7</span>
+            <h2>Родитель подтверждает доступ</h2>
+            <p>Система привязывает Telegram ID родителя к карточке ученика. Код после этого сгорает.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="8">
+          <div class="illustration">
+            <div class="app-card student-cabinet">
+              <img src="assets/sevastyan-volodin.jpg" alt="" />
+              <div>
+                <p>Ученик</p>
+                <h2>Сева Володин</h2>
+                <span>Адаптация к воде · начальный уровень</span>
+              </div>
+              <div class="tabs-mini">
+                <b>Инфо</b><b>Прогресс</b><b>Оплата</b><b>Документы</b>
+              </div>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Шаг 8</span>
+            <h2>Родитель видит только Севу</h2>
+            <p>В родительском кабинете нет чужих учеников. Только свой ребенок и нужные разделы.</p>
+          </div>
+        </article>
+
+        <article class="scene" data-scene="9">
+          <div class="illustration split">
+            <div class="app-card mini">
+              <p>Тренер</p>
+              <h2>Ученики</h2>
+              <span>Сева Володин · родитель подключен</span>
+            </div>
+            <div class="app-card mini">
+              <p>Родитель</p>
+              <h2>Сева</h2>
+              <span>Инфо · прогресс · оплата · документы</span>
+            </div>
+          </div>
+          <div class="copy">
+            <span>Финал</span>
+            <h2>Все внутри Telegram</h2>
+            <p>Тренер управляет учениками и группами. Родитель видит только своего ребенка.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer class="controls">
+        <button id="prevScene" type="button">Назад</button>
+        <button id="playScene" type="button">Авто</button>
+        <button id="nextScene" type="button">Дальше</button>
+      </footer>
+    </main>
+
+    <script src="demo.js"></script>
+  </body>
+</html>

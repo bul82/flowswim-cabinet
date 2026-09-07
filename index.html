@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7fbfd" />
+    <title>FlowSwim Кабинет</title>
+    <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">FlowSwim</p>
+          <h1>Личный кабинет</h1>
+        </div>
+        <button class="icon-button" type="button" aria-label="Открыть уведомления">
+          <span aria-hidden="true">●</span>
+        </button>
+      </header>
+
+      <section class="role-switcher" aria-label="Выбор профиля">
+        <button class="role-button is-active" type="button" data-role="student">
+          <span>Ученик</span>
+          <small>родитель и ребенок</small>
+        </button>
+        <button class="role-button" type="button" data-role="coach">
+          <span>Тренер</span>
+          <small>группы и ученики</small>
+        </button>
+      </section>
+
+      <section class="role-view is-active" id="student-view" data-role-view="student">
+        <section class="athlete-hero" aria-label="Профиль спортсмена">
+          <div class="athlete-photo">
+            <img src="assets/sevastyan-volodin.jpg" alt="Володин Севастьян Денисович" />
+          </div>
+          <div class="athlete-main">
+            <div class="status-row">
+              <span class="status-pill">Детская группа</span>
+              <span class="status-pill muted">Родитель подключен</span>
+            </div>
+            <h2>Володин Севастьян Денисович</h2>
+            <p>Начальный уровень · тренер Анна Лебедева</p>
+          </div>
+        </section>
+
+        <nav class="tabs" aria-label="Разделы ученика" data-tabs="student">
+          <button class="tab is-active" type="button" data-tab="student-overview">Главное</button>
+          <button class="tab" type="button" data-tab="student-parents">Родители</button>
+          <button class="tab" type="button" data-tab="student-progress">Прогресс</button>
+          <button class="tab" type="button" data-tab="student-docs">Документы</button>
+        </nav>
+
+        <section class="tab-panel is-active" id="student-overview" data-panel-group="student">
+          <div class="section-head">
+            <h3>Ближайшее</h3>
+            <button class="text-button" type="button">Все занятия</button>
+          </div>
+
+          <article class="training-card">
+            <div>
+              <p class="card-kicker">Сегодня</p>
+              <h4>Адаптация к воде</h4>
+              <p>18:30 · малая чаша · бассейн «Олимп»</p>
+            </div>
+            <button class="primary-button" type="button" id="confirmVisit">Я приду</button>
+          </article>
+
+          <div class="metric-grid">
+            <article class="metric-card">
+              <p>Посещаемость</p>
+              <strong>1 из 1</strong>
+            </article>
+            <article class="metric-card">
+              <p>Навык недели</p>
+              <strong>Привыкание к воде</strong>
+            </article>
+            <article class="metric-card">
+              <p>Оплата</p>
+              <strong>до 18 июля</strong>
+            </article>
+          </div>
+
+          <article class="note-card">
+            <p class="card-kicker">Комментарий тренера</p>
+            <p>Севастьян знакомится с водой и тренером. На следующем занятии мягко закрепим погружение лица и выдох.</p>
+          </article>
+        </section>
+
+        <section class="tab-panel" id="student-parents" data-panel-group="student">
+          <div class="section-head">
+            <h3>Родители</h3>
+            <button class="text-button" type="button" id="saveParents">Сохранить</button>
+          </div>
+
+          <form class="parent-list">
+            <article class="parent-card">
+              <div class="parent-photo mother" aria-hidden="true">ЕС</div>
+              <div class="parent-fields">
+                <label>
+                  Мама
+                  <input name="motherName" value="Не подключена" autocomplete="name" />
+                </label>
+                <label>
+                  Телефон
+                  <input name="motherPhone" value="Телефон добавит родитель" inputmode="tel" autocomplete="tel" />
+                </label>
+                <label>
+                  Telegram
+                  <input name="motherTelegram" value="Не указан" autocomplete="off" />
+                </label>
+              </div>
+            </article>
+
+            <article class="parent-card">
+              <div class="parent-photo father" aria-hidden="true">АС</div>
+              <div class="parent-fields">
+                <label>
+                  Папа
+                  <input name="fatherName" value="Денис Володин" autocomplete="name" />
+                </label>
+                <label>
+                  Телефон
+                  <input name="fatherPhone" value="+7 916 641-93-02" inputmode="tel" autocomplete="tel" />
+                </label>
+                <label>
+                  Telegram
+                  <input name="fatherTelegram" value="@DenVolodins" autocomplete="off" />
+                </label>
+              </div>
+            </article>
+          </form>
+        </section>
+
+        <section class="tab-panel" id="student-progress" data-panel-group="student">
+          <div class="section-head">
+            <h3>Прогресс</h3>
+            <button class="text-button" type="button">Отчет</button>
+          </div>
+
+          <div class="skill-list">
+            <article class="skill-card">
+              <div>
+                <h4>Адаптация к воде</h4>
+                <p>Спокойно заходит в воду с тренером</p>
+              </div>
+              <meter min="0" max="100" value="35">35%</meter>
+            </article>
+            <article class="skill-card">
+              <div>
+                <h4>Выдох в воду</h4>
+                <p>Начинаем через игру и короткие подходы</p>
+              </div>
+              <meter min="0" max="100" value="20">20%</meter>
+            </article>
+            <article class="skill-card">
+              <div>
+                <h4>Скольжение</h4>
+                <p>Пока с поддержкой тренера</p>
+              </div>
+              <meter min="0" max="100" value="15">15%</meter>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="student-docs" data-panel-group="student">
+          <div class="section-head">
+            <h3>Документы</h3>
+            <button class="text-button" type="button">Загрузить</button>
+          </div>
+
+          <div class="doc-list">
+            <article class="doc-row">
+              <div>
+              <h4>Медицинская справка</h4>
+              <p>Нужно загрузить перед первым циклом занятий</p>
+            </div>
+              <span class="doc-status warn">Нужно</span>
+            </article>
+            <article class="doc-row">
+              <div>
+                <h4>Согласие родителя</h4>
+              <p>Ожидает подтверждения родителя</p>
+            </div>
+            <span class="doc-status warn">Нужно</span>
+            </article>
+            <article class="doc-row">
+              <div>
+                <h4>Фото родителя для пропуска</h4>
+                <p>Нужно обновить</p>
+              </div>
+              <span class="doc-status warn">Нужно</span>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="role-view" id="coach-view" data-role-view="coach">
+        <section class="coach-hero" aria-label="Профиль тренера">
+          <div>
+            <p class="eyebrow">Тренер</p>
+            <h2>Анна Лебедева</h2>
+            <p>1 группа · 1 ученик · сегодня 1 тренировка</p>
+          </div>
+          <button class="primary-button" type="button">Отметить группу</button>
+        </section>
+
+        <nav class="tabs coach-tabs" aria-label="Разделы тренера" data-tabs="coach">
+          <button class="tab is-active" type="button" data-tab="coach-today">Сегодня</button>
+          <button class="tab" type="button" data-tab="coach-groups">Группы</button>
+          <button class="tab" type="button" data-tab="coach-students">Ученики</button>
+          <button class="tab" type="button" data-tab="coach-progress">Прогресс</button>
+        </nav>
+
+        <section class="tab-panel is-active" id="coach-today" data-panel-group="coach">
+          <div class="section-head">
+            <h3>Сегодня</h3>
+            <button class="text-button" type="button">Расписание</button>
+          </div>
+
+          <div class="coach-list">
+            <article class="coach-session">
+              <div>
+                <p class="card-kicker">18:30 · дорожка 3</p>
+                <h4>Детская группа</h4>
+                <p>1 ученик · адаптация к воде</p>
+              </div>
+              <button class="small-button" type="button">Посещаемость</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="coach-groups" data-panel-group="coach">
+          <div class="section-head">
+            <h3>Группы</h3>
+            <button class="text-button" type="button">Добавить</button>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card">
+              <p>Детская группа</p>
+              <strong>1 ребенок</strong>
+            </article>
+            <article class="metric-card">
+              <p>Родители</p>
+              <strong>1 подключен</strong>
+            </article>
+            <article class="metric-card">
+              <p>Сегодня</p>
+              <strong>1 отметка</strong>
+            </article>
+          </div>
+
+          <article class="note-card">
+            <p class="card-kicker">Фокус недели</p>
+            <p>Севастьян начинает с мягкой адаптации к воде: доверие к тренеру, погружение лица, выдох и первые скольжения.</p>
+          </article>
+        </section>
+
+        <section class="tab-panel" id="coach-students" data-panel-group="coach">
+          <div class="section-head">
+            <h3>Все ученики</h3>
+            <button class="text-button" type="button">Добавить</button>
+          </div>
+
+          <div class="student-list">
+            <article class="student-row">
+              <div class="student-avatar image-avatar">
+                <img src="assets/sevastyan-volodin.jpg" alt="" />
+              </div>
+              <div>
+                <h4>Володин Севастьян Денисович</h4>
+                <p>Детская группа · Денис Володин · +7 916 641-93-02</p>
+              </div>
+              <span class="doc-status ok">Родитель</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="coach-progress" data-panel-group="coach">
+          <div class="section-head">
+            <h3>Прогресс группы</h3>
+            <button class="text-button" type="button">Сохранить</button>
+          </div>
+
+          <div class="skill-list">
+            <article class="skill-card">
+              <div>
+                <h4>Володин Севастьян</h4>
+                <p>Адаптация · спокойно заходит в воду</p>
+              </div>
+              <meter min="0" max="100" value="35">35%</meter>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
